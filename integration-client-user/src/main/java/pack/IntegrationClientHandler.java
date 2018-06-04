@@ -53,7 +53,7 @@ public class IntegrationClientHandler extends ChannelInboundHandlerAdapter
 			ReferenceCountUtil.release(msg);
 			synchronized (lock)
 			{
-			lock.notifyAll();
+				lock.notifyAll();
 			}
 		}
 	}

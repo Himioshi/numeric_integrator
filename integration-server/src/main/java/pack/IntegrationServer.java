@@ -21,7 +21,7 @@ public class IntegrationServer
 	public static BlockingQueue<TWrapper> qIn = new LinkedBlockingQueue<TWrapper>();
 	public static ArrayDeque<TWrapper> qOut = new ArrayDeque<TWrapper>();
 	
-	public static int threadNumber = 15;
+	public static int threadNumber = 10;
 	
 	public static void main(String[] args) throws Exception
 	{
@@ -72,7 +72,7 @@ public class IntegrationServer
                      ch.pipeline().addLast(new IntegrationServerHandler(qIn));
                  }
              })
-             .option(ChannelOption.SO_BACKLOG, 1)
+             .option(ChannelOption.SO_BACKLOG, 128)
              .childOption(ChannelOption.SO_KEEPALIVE, true);
     
             ChannelFuture f = b.bind(port).sync();

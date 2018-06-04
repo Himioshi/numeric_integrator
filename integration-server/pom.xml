@@ -48,12 +48,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>RELEASE</version>
-            <scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>pack</groupId>
 			<artifactId>rev-polish-pack-source-impl</artifactId>
 			<version>0.1</version>
@@ -61,19 +55,7 @@
 		</dependency>
 		<dependency>
 			<groupId>pack</groupId>
-			<artifactId>rev-polish-pack-source-api</artifactId>
-			<version>0.1</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>pack</groupId>
 			<artifactId>integrate-rpn-pack-source-impl</artifactId>
-			<version>0.1</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>pack</groupId>
-			<artifactId>integrate-pack-source-api</artifactId>
 			<version>0.1</version>
 			<scope>compile</scope>
 		</dependency>

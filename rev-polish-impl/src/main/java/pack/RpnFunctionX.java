@@ -184,7 +184,6 @@ public class RpnFunctionX implements RpnFunctionXInterface
 			case OP_DIV:
 				if (op_stack.get(op_stack.size() - 1) == 0.0)
 				{
-					//"Division by 0 in RPNfunc!"<<std::endl;
 					return 0.0;
 				}
 				op_stack.set(op_stack.size() - 2, op_stack.get(op_stack.size() - 2) / op_stack.get(op_stack.size() - 1));
@@ -193,7 +192,6 @@ public class RpnFunctionX implements RpnFunctionXInterface
 			case OP_MOD:
 				if (op_stack.get(op_stack.size() - 1) == 0.0)
 				{
-					//"Division by 0 in RPNfunc!"<<std::endl;
 					return 0.0;
 				}
 				op_stack.set(op_stack.size() - 2, op_stack.get(op_stack.size() - 2)%op_stack.get(op_stack.size() - 1));
@@ -217,7 +215,6 @@ public class RpnFunctionX implements RpnFunctionXInterface
 			case OP_LN:
 				if (op_stack.get(op_stack.size() - 1) <= 0.0)
 				{
-					//"Negative number to log"
 					return 0.0;
 				}
 				op_stack.set(op_stack.size() - 1, Math.log(op_stack.get(op_stack.size() - 1)));
@@ -242,49 +239,6 @@ public class RpnFunctionX implements RpnFunctionXInterface
 			return false;
 		}
 	}
-	/*std::string StrFromOp(Unit<T> unit)
-	{
-	    switch(unit.op)
-	    {
-	    case OPERAND:
-	    {
-	        std::stringstream strm;
-	        strm<<unit.operand;
-	        return strm.str();
-	    }
-	    case ARGUEMENT:
-	        return "x";
-	    case L_BRACKET:
-	        return "(";
-	    case R_BRACKET:
-	        return ")";
-	    case OP_PLUS:
-	        return "+";
-	    case OP_MINUS:
-	        return "-";
-	    case OP_MULT:
-	        return "*";
-	    case OP_DIV:
-	        return "/";
-	    case OP_MOD:
-	        return "%";
-	    case OP_POWER:
-	        return "^";
-	    case OP_UN_PLUS:
-	        return "un+";
-	    case OP_UN_MINUS:
-	        return "un-";
-	    case OP_SIN:
-	        return "sin";
-	    case OP_COS:
-	        return "cos";
-	    case OP_LN:
-	        return "ln";
-	    case OP_NONE:
-	        return "_";
-	    }
-	    return "_";
-	}*/
 	
 	private Unit ReadOp(String in, RefObject<Integer> pos)
 	{

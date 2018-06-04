@@ -46,7 +46,7 @@ public class IntegrationClientHandler extends ChannelInboundHandlerAdapter
 		try
 		{
 			str = in.toString(Charset.forName("utf-8"));
-			System.out.println("Recieved solution: "+str);
+			System.out.println("Recieved solution: " + str);
 		}
 		finally
 		{

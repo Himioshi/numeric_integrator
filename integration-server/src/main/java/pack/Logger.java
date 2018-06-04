@@ -6,13 +6,6 @@ import io.netty.buffer.ByteBuf;
 import io.netty.util.ReferenceCountUtil;
 import io.netty.buffer.Unpooled;
 
-import io.netty.util.concurrent.BlockingOperationException;
-import io.netty.util.concurrent.Future;
-import io.netty.util.concurrent.GenericFutureListener;
-
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.*;
 
 public class Logger implements Runnable
@@ -39,22 +32,12 @@ public class Logger implements Runnable
 			}
 			if (pack!=null)
 			{
-				ChannelHandlerContext ctx = pack.ctx;
 				System.out.println("Sent solution: "+pack.task.function);
 				ByteBuf out = Unpooled.wrappedBuffer(pack.task.function.getBytes());
-				final ChannelFuture f = ctx.writeAndFlush(out);
-				/*f.addListener(new ChannelFutureListener()
-				{
-					@Override
-					public void operationComplete(ChannelFuture future)
-					{
-						assert f == future;
-						ctx.close();
-					}
-				});*/
+				pack.ctx.writeAndFlush(out);
 			}
 			else
-				try{Thread.sleep(100);}catch (InterruptedException e){e.printStackTrace();}
+				try{Thread.sleep(10);}catch (InterruptedException e){e.printStackTrace();}
 		}
 	}
 	

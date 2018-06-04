@@ -32,8 +32,8 @@ public class IntegrationServerHandler extends ChannelInboundHandlerAdapter
 		{
 			str = in.toString(Charset.forName("utf-8"));
 			Scanner sc = new Scanner(str).useLocale(Locale.US);
-			l=sc.nextDouble();
-			r=sc.nextDouble();
+			l = sc.nextDouble();
+			r = sc.nextDouble();
 			f = sc.nextLine();
 			f=f.replaceAll(" ","");
 			System.out.println("Got task: from "+l+" to "+r+" "+f);

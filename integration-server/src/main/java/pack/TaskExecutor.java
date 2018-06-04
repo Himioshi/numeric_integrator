@@ -34,14 +34,13 @@ public class TaskExecutor implements Runnable
 			if (pack!=null)
 			{
 				integrator.SetFunction(pack.task.function);
-				double result = integrator.integrate(pack.task.leftBorder,pack.task.rightBorder);
-				pack.task.function = Double.toString(result);
+				pack.task.function = Double.toString(integrator.integrate(pack.task.leftBorder,pack.task.rightBorder));
 				synchronized (qOut)
 				{
 					qOut.add(pack);
 				}
 			}
-			try{Thread.sleep(100);}catch (InterruptedException e){e.printStackTrace();}
+			try{Thread.sleep(10);}catch (InterruptedException e){e.printStackTrace();}
 		}
 	}
 	

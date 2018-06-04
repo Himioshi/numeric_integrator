@@ -19,5 +19,7 @@
 		<module>integration-console</module>
 		<module>integration-server</module>
 		<module>integration-task</module>
+		<module>integration-client-user</module>
+		<module>integration-client-auto</module>
 	</modules>
 </project>

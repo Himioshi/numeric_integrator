@@ -13,5 +13,6 @@
 	
 	<modules>
 		<module>rev-polish-api</module>
+		<module>rev-polish-impl</module>
 	</modules>
 </project>

@@ -17,5 +17,7 @@
 		<module>integrate-api</module>
 		<module>integrate-rpn-impl</module>
 		<module>integration-console</module>
+		<module>integration-server</module>
+		<module>integration-task</module>
 	</modules>
 </project>

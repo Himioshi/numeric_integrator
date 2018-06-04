@@ -14,5 +14,8 @@
 	<modules>
 		<module>rev-polish-api</module>
 		<module>rev-polish-impl</module>
+		<module>integrate-api</module>
+		<module>integrate-rpn-impl</module>
+		<module>integration-console</module>
 	</modules>
 </project>
